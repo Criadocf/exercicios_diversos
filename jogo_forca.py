@@ -1,4 +1,3 @@
-
 #ESQUELETO DO JOGO DA FORCA, TODAS AS LINHAS DE CÓDIGO SAIRÃO DESSA ESTRUTURA.
 #palavra = 'caju'
 
@@ -16,28 +15,33 @@
   ######
 
 
-palavra = 'RIVALDO'
 
-letras_certas = ['_ '] * (len(palavra))
 
-acertou = False
 
-tentativas = 5
+def jogo_da_forca():
 
-while acertou == False:
-  letras_certas_copia = letras_certas.copy()
-  chute = str(input('DIGITE UMA LETRA: ').upper())
-  for indice, letra in enumerate(palavra):
-    if chute == letra:
-      letras_certas[indice] = chute
+  palavra = 'ODEGAARD'
+  letras_certas = ['_ '] * (len(palavra))
+  acertou = False
+  tentativas = 5
 
-  if letras_certas == letras_certas_copia:
+
+  while acertou == False:
+    letras_certas_copia = letras_certas.copy()
+    chute = str(input('DIGITE UMA LETRA: ').upper())
+    for indice, letra in enumerate(palavra):
+      if chute == letra:
+        letras_certas[indice] = chute
+
+    if letras_certas == letras_certas_copia:
       tentativas -= 1
       if tentativas == 0:
         print('Suas tentativas acabaram, GAME OVER FILHOTE')
         break
 
-  print(''.join(letras_certas), tentativas) #junto as strings que foram 'jogadas soltas' dentro da lista, dessa forma imprimo como uma palavra completa.
-  if palavra == ''.join(letras_certas):
-    print('PARABÉNS, VOCÊ ACERTOU')
-    acertou = True
+    print(''.join(letras_certas), tentativas) #junto as strings que foram 'jogadas soltas' dentro da lista, dessa forma imprimo como uma palavra completa.
+    if palavra == ''.join(letras_certas):
+      print('PARABÉNS, VOCÊ ACERTOU')
+      acertou = True
+
+jogo_da_forca()
