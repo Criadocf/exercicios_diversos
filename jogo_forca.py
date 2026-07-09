@@ -1,23 +1,3 @@
-#ESQUELETO DO JOGO DA FORCA, TODAS AS LINHAS DE CÓDIGO SAIRÃO DESSA ESTRUTURA.
-#palavra = 'caju'
-
-
-#Letras_certas = ['_'] * (len(palavra))
-
-#acertou = False
-
-#while acertou == False:
-  #chute = str(input('DIGITE UMA LETRA: '))
-  #for c in palavra:
-    #if chute == c:
-      #letras_certas[palavra.index(c)] = chute
-  #print(letras_certas)
-  ######
-
-
-
-
-
 def jogo_da_forca():
 
   palavra = 'ODEGAARD'
@@ -43,5 +23,5 @@ def jogo_da_forca():
     if palavra == ''.join(letras_certas):
       print('PARABÉNS, VOCÊ ACERTOU')
       acertou = True
-
-jogo_da_forca()
+if __name__ == '__main__':
+    jogo_da_forca()
