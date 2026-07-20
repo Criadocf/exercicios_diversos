@@ -10,7 +10,8 @@ caminho_arquivo = os.path.join(pasta_atual, "palavras_jogo_forca.txt")
 with open(caminho_arquivo, 'r', encoding='utf-8') as txt:
   conteudo = txt.read().splitlines() #essesplitlines() ja joga cada linha do arquivo .txt dentro de uma lista. EXECELENTE. entao 'conteudo' e uma lista
 
-palavra_sorteada = random.choice(conteudo)
+for c in range(conteudo.index('PALAVRAS DO JOGO DA FORCA')+1, len(conteudo)):
+    palavra_sorteada = random.choice(conteudo)
 
 
 def jogo_da_forca():
